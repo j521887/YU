@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  GrameSapce
+
+  Created by Des on 2017/11/28.
+  Copyright © 2017年 WJC. All rights reserved.
+*/
+"CFBundleName"        = "百家乐";
+"CFBundleDisplayName" = "百家乐";

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="webViewController">
+            <connections>
+                <outlet property="titleLab" destination="ttb-SY-h3d" id="FsG-i3-M9b"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="cSP-gv-m73" id="0k3-CF-A2l"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hallBg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gZm-Ed-8dK">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-to-Ntf">
+                    <rect key="frame" x="20" y="13" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="EAt-bK-MPv"/>
+                        <constraint firstAttribute="height" constant="45" id="Nu2-OF-eVs"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="icon_close.png"/>
+                    <connections>
+                        <action selector="closeBtnClick:" destination="-1" eventType="touchUpInside" id="5tz-0a-Fxl"/>
+                    </connections>
+                </button>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSP-gv-m73">
+                    <rect key="frame" x="131" y="60" width="306" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </webView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttb-SY-h3d">
+                    <rect key="frame" x="223" y="31" width="123" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="gZm-Ed-8dK" secondAttribute="bottom" id="25u-fK-Ten"/>
+                <constraint firstItem="SO1-to-Ntf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="55M-lb-Txe"/>
+                <constraint firstAttribute="trailing" secondItem="gZm-Ed-8dK" secondAttribute="trailing" id="7tB-tD-fVe"/>
+                <constraint firstItem="gZm-Ed-8dK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JSz-Od-16h"/>
+                <constraint firstItem="ttb-SY-h3d" firstAttribute="leading" secondItem="SO1-to-Ntf" secondAttribute="trailing" constant="158" id="Mih-cj-w5c"/>
+                <constraint firstItem="gZm-Ed-8dK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WTy-mL-G90"/>
+                <constraint firstItem="cSP-gv-m73" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="131" id="dGP-YZ-nF3"/>
+                <constraint firstItem="SO1-to-Ntf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="ige-Ng-dYh"/>
+                <constraint firstAttribute="trailing" secondItem="ttb-SY-h3d" secondAttribute="trailing" constant="222" id="jRO-oa-ONb"/>
+                <constraint firstItem="ttb-SY-h3d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="31" id="ug9-pY-8Zp"/>
+                <constraint firstAttribute="trailing" secondItem="cSP-gv-m73" secondAttribute="trailing" constant="131" id="wLp-q8-lEj"/>
+                <constraint firstAttribute="bottom" secondItem="cSP-gv-m73" secondAttribute="bottom" constant="60" id="wya-LY-gv6"/>
+                <constraint firstItem="cSP-gv-m73" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="z48-tx-2qh"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="hallBg.jpg" width="1280" height="720"/>
+        <image name="icon_close.png" width="107" height="105"/>
+    </resources>
+</document>

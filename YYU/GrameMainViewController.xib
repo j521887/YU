@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GrameMainViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome2" translatesAutoresizingMaskIntoConstraints="NO" id="Xwj-b8-wIq">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmU-wa-kgj">
+                    <rect key="frame" x="167" y="216" width="235" height="84"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="235" id="plu-Xl-YnF"/>
+                        <constraint firstAttribute="height" constant="84" id="uyb-am-3Ra"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                    <inset key="titleEdgeInsets" minX="33" minY="-6" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="立即开始" backgroundImage="btnbg3"/>
+                    <connections>
+                        <action selector="PlayBtnClick:" destination="-1" eventType="touchUpInside" id="d9z-N0-9Wm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwE-6v-Y6N">
+                    <rect key="frame" x="207" y="77" width="155" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="155" id="8EF-1R-VMa"/>
+                        <constraint firstAttribute="height" constant="50" id="MEV-ez-5ez"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="cch-Jc-fSk"/>
+                    </constraints>
+                    <state key="normal" title="使用说明" backgroundImage="btnbg1"/>
+                    <connections>
+                        <action selector="noticeBtnClick:" destination="-1" eventType="touchUpInside" id="OLB-AM-exY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39V-Gf-PvZ">
+                    <rect key="frame" x="207" y="150" width="155" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="155" id="CGH-mz-SJe"/>
+                        <constraint firstAttribute="height" constant="50" id="Wge-rl-WKQ"/>
+                    </constraints>
+                    <state key="normal" title="使用规则" backgroundImage="btnbg2"/>
+                    <connections>
+                        <action selector="ruleBtnClick:" destination="-1" eventType="touchUpInside" id="xmV-iO-AfT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bmU-wa-kgj" secondAttribute="bottom" constant="20" id="1A9-Aa-OWt"/>
+                <constraint firstAttribute="trailing" secondItem="Xwj-b8-wIq" secondAttribute="trailing" id="77x-Vv-SXU"/>
+                <constraint firstItem="bmU-wa-kgj" firstAttribute="top" secondItem="39V-Gf-PvZ" secondAttribute="bottom" constant="16" id="TEk-KN-yza"/>
+                <constraint firstItem="Xwj-b8-wIq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Udg-QR-xyo"/>
+                <constraint firstAttribute="bottom" secondItem="Xwj-b8-wIq" secondAttribute="bottom" id="buW-4K-yqP"/>
+                <constraint firstItem="Xwj-b8-wIq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cUC-QG-UjA"/>
+                <constraint firstItem="NwE-6v-Y6N" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fZN-99-6ly"/>
+                <constraint firstItem="bmU-wa-kgj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fgI-VG-tat"/>
+                <constraint firstItem="39V-Gf-PvZ" firstAttribute="top" secondItem="NwE-6v-Y6N" secondAttribute="bottom" constant="23" id="jD4-BR-cxx"/>
+                <constraint firstItem="39V-Gf-PvZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ugk-ko-1CT"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="btnbg1" width="235" height="76"/>
+        <image name="btnbg2" width="235" height="76"/>
+        <image name="btnbg3" width="241" height="85"/>
+        <image name="welcome2" width="960" height="540"/>
+    </resources>
+</document>
