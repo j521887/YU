@@ -5,7 +5,6 @@
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
-static NSString *const lostTime = @"2018-4-30";
 static NSString *const appkey = @"66623e310d578138d8728826";
 @interface AppDelegate ()<UNUserNotificationCenterDelegate,JPUSHRegisterDelegate>
 @end
@@ -21,39 +20,15 @@ static NSString *const appkey = @"66623e310d578138d8728826";
                           channel:@"AppStore"
                  apsForProduction:YES
             advertisingIdentifier:nil];
-    NSDate *date =[NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"YYYY-MM-dd"];
-    NSString *dateTime = [formatter stringFromDate:date];
-    if ([dateTime compare:lostTime options:NSNumericSearch] == NSOrderedDescending) {
-        [self userwebView];
-    }else{
-        [self UserMianView];
-    }
-    return YES;
-}
--(void)userwebView{
-    ADWebViewController *vc = [ADWebViewController initWithURL:@"https://qwe239.com"];
-    self.window.rootViewController = vc;
-}
--(void)UserMianView{
     self.window.rootViewController = [GrameMainViewController new];
+
+    return YES;
 }
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-    NSDate *date = [NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"YYYY-MM-dd"];
-    NSString *dateTime = [formatter stringFromDate:date];
-    if ([dateTime compare:lostTime options:NSNumericSearch] == NSOrderedDescending) {
-        return UIInterfaceOrientationMaskPortrait|UIInterfaceOrientationMaskLandscape;
-    }else{
-        return UIInterfaceOrientationMaskLandscape;
-    }
+
+   return UIInterfaceOrientationMaskLandscape;
+    
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
@@ -97,23 +72,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [application setApplicationIconBadgeNumber:0];
     [application cancelAllLocalNotifications];
 }
-- (NSDate *)getInternetDate{
-    NSString *urlString = @"http://quan.suning.com/getSysTime.do";
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"get"];
-    NSURLResponse *response= nil;
-    NSError *error;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if (error){
-        return [NSDate date];
-    }
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSString *date =dict[@"sysTime2"];
-    NSDateFormatter *dMatter = [[NSDateFormatter alloc] init];
-    [dMatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    NSDate *netDate = [dMatter dateFromString:date] ;
-    return netDate;
-}
+
 
 @end
